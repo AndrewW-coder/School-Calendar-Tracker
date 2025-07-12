@@ -1,0 +1,276 @@
+body {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: #313336;
+}
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#header {
+  padding: 10px;
+  color: #a9b4c2;
+  font-size: 26px;
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color:#5e6572;
+  width: 50px;
+}
+/* sets the max width for the container so the boxes will wrap around the area */
+#container {
+  width: 770px;
+}
+#weekdays {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  color: #eef1ef;
+  background-color: #282828;
+  border-radius: 5px;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  width: 100px; /*this works with the max width for the container, so there is a max of 7 days in each row*/
+  padding: 5px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #b2b2b2;
+  margin: 5px; /* splits up each of the days with a margin, adding 5 pixels to each side of the day */
+  box-shadow: 0px 0px 3px #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day:hover {
+  background-color: #636363;
+}
+
+.day + #currentDay {
+  background-color:#e8f4fa;
+  box-shadow: 0px 0px 2px 2px #e8f4fa;
+}
+
+.event {
+  vertical-align: top;
+  font-size: 10px;
+  padding: 3px;
+  background-color: #6c6c6c;
+  color: white;
+  border-radius: 4px;
+  max-height: 20px;
+  overflow: hidden;
+}
+.padding {
+  cursor: default !important;
+  background-color: #313336 !important;
+  box-shadow: none !important;
+}
+#defaultEventModal, #newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #444546;
+  box-shadow: 0px 0px 10px black;
+  width: 700px;
+  height: 300px;
+  top: 150px;
+  position: absolute;
+  font-family: sans-serif;
+}
+
+#closeButton, #cancelButton, #exitButton {
+  background-color: #d36c6c;
+  position: absolute;
+  bottom: 20px;
+}
+
+#eventList {
+  top: 60px;
+  width: 700px;
+  height: 230px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.eventText {
+  width: 700px;
+  height: 20px;
+  padding: 2px;
+  border-radius: 5px;
+  color: #d8d8d8;
+  background-color: #6c6c6c;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.eventText:hover {
+  filter: brightness(70%);
+}
+
+#createButton, #confirmButton {
+  background-color: #92a1d1;
+  position: absolute;
+  bottom: 20px;
+  left: 125px;
+}
+
+#saveButton {
+  background-color: #92a1d1;
+  position: absolute;  
+  bottom: 20px;
+  left: 125px;
+}
+
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(37, 37, 37, 0.8);
+}
+
+#modalText, #typeOfEventText, #eventDateText {
+  color: #d8d8d8; 
+  position: absolute;
+  top: 0px;
+}
+
+#typeOfEventText {
+  top: 40px;
+}
+
+#eventDateText {
+  top: 100px;
+}
+
+.homework {
+  background-color: rgb(113, 58, 58);
+}
+
+.test {
+  background-color: #3d496e;
+}
+
+.assignment {
+  background-color: rgb(66, 113, 66);
+}
+
+.eventColor {
+  background-color: #636363;
+}
+
+.eventDisplay {
+  width: 300px;
+  height: auto;
+  font-family: "Lato", sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.dropdownID {
+  color: #d8d8d8;
+  text-align: left;
+  position: absolute;
+  height: 23px;
+  left: 5px;
+  background-color: #282828;
+  border-radius: 5px;
+  z-index: 20;
+  padding: 6px;
+  margin: 20px;
+  border: 2px black;
+  cursor: pointer;
+}
+
+#eventTypePar {
+  top: 60px;
+  width: 90px;
+}
+
+#eventMonthPar {
+  top: 120px;
+  width: 35px;
+}
+
+.dropdownBox {
+  display: none;
+  flex-direction: column;
+  left: 5px;
+  padding: 5px;
+  margin: 20px;
+  position: absolute;
+  z-index: 50;
+  background-color: #282828;
+  border-radius: 5px;
+}
+
+#dropdownType {
+  top: 98px;
+  width: 90px;
+}
+
+
+.dropdownItem {
+  font-family: "Lato", sans-serif;
+  color: #d8d8d8;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #636363;
+}
+
+#eventTitleInput {
+  position: absolute;
+  padding: 10px;
+  width: 400px;
+  left: 150px;
+  height: 35px;
+  top: 80px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+
+#newEventSpecs {
+  display: block;
+}
+
+

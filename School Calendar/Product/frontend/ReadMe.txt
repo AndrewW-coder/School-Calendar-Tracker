@@ -1,0 +1,2 @@
+In order to run this code, you should download Visual Studio Code. Copy the files from this to your own. You can download the Live Server 
+extension in VSC or you can run it directly from the files. When running, make sure you are running the HTML file.

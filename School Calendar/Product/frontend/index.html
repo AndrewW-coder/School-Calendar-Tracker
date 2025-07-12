@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id = "container">
+        <div id = "header"> <!-- contains the month and year and the buttons to switch between months -->
+            <div id = "monthDisplay"></div>
+            <div>
+                <button id = "backButton">&lt;</button>
+                <button id = "nextButton">&gt;</button>
+            </div>
+        </div>
+
+        <!-- Shows the different days of the week in the calender -->
+        <div id = "weekdays"> 
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+        </div>
+
+        <!-- Needs to be dynamic so that we can change calendar later on -->
+        <div id = "calendar"></div>
+    </div>
+
+    <div id = "defaultEventModal"> <!-- when you click on the date, it pops up the events for that date -->
+        <h2 id = "modalText">Events</h2>
+        <div id = "eventList"></div>
+        <button id = "closeButton"> Close </button>
+        <button id = "createButton"> Create </button>
+    </div>
+
+    <div id = "newEventModal"> <!--Everything in this section is part of the modal that opens when you create a new event-->
+        <h2 id = "modalText"> Create New Event</h2>
+
+        
+        <h5 id = "typeOfEventText"> Type of Event </h5> <!-- Creates a dropdown box allowing user to choose type of event-->
+        <div id = "eventTypePar" class = "dropdownID"></div>
+
+        <div id = "dropdownType" class = "dropdownBox">
+            <div id = "eventType" class = "dropdownItem"> Homework </div>
+            <div id = "eventType" class = "dropdownItem"> Test </div>
+            <div id = "eventType" class = "dropdownItem"> Assignment </div>
+            <div id = "eventType" class = "dropdownItem"> Event </div>
+        </div>
+
+
+        <div id = "newEventSpecs"> <!-- Allows user to type in event name -->
+            <input id = "eventTitleInput" placeholder = "Event Title" />               
+        </div>
+
+        <button id = "saveButton"> Save </button>
+        <button id = "cancelButton"> Cancel </button>
+    </div>
+    <div id = "deleteEventModal"> <!-- Pops up when you click on an event to delete it -->
+        <h2 id = "modalText">Delete Event?</h2>
+        <button id = "exitButton"> Exit </button>
+        <button id = "confirmButton"> Confirm </button>
+    </div>
+
+    
+    <div id = "modalBackDrop"></div> <!-- just changes the background when you open a modal-->
+
+    
+    <script type = "module" src = "./app.js"></script>
+</body>
+</html>
